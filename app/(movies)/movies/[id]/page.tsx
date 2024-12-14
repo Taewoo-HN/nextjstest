@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: IParams) {
   };
 }
 
-// Next.js 15 -> async를 사용해야 params과 searchParams를 사용할 수 있음
+// Next.js 15 -> async, Promise를 사용해야 params과 searchParams를 사용할 수 있음
 export default async function MoviesPages({ params }: IParams) {
   //fallback은 Suspense가 로딩 중일 때 보여줄 컴포넌트
   //Suspense는 서버-사이드 렌더링(SSR)을 지원하지 않음
