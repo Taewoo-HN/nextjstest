@@ -3,9 +3,9 @@ import MovieInfo, { getMovie } from "../../../../components/moive-info";
 import MovieVideo from "../../../../components/movies-videos";
 
 interface IParams {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 export async function generateMetadata({ params }: IParams) {
   const { id } = await params;
