@@ -18,9 +18,10 @@ export default async function HomePage() {
   return (
     <div>
       {movies.map((movie) => (
-        <li key={movie.id}>
+        <div key={movie.id}>
+          <img src={movie.poster_path} />
           <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
-        </li>
+        </div>
       ))}
     </div>
   );
