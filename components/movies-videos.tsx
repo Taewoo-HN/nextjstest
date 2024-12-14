@@ -1,4 +1,5 @@
 import { BASE_URL } from "../app/(home)/page";
+import potato from "../styles/movie_video.module.css";
 
 async function getTrailers(id: String) {
   console.log(`fetching trailers:${Date.now()}`);
@@ -8,5 +9,16 @@ async function getTrailers(id: String) {
 
 export default async function MovieVideo({ id }: { id: String }) {
   const videos = await getTrailers(id);
-  return <h5>{JSON.stringify(videos)}</h5>;
+  return (
+    <div className={potato.container}>
+      {videos.map((video) => (
+        <iframe
+          key={video.id}
+          src={`https://youtube.com/embed/${video.key}`}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title={video.name}
+        />
+      ))}
+    </div>
+  );
 }

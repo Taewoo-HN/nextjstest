@@ -1,7 +1,8 @@
-import Link from "next/link";
+import Movie from "../../components/movie";
+import styles from "../../styles/home.module.css";
 
 // 메타데이터는 병합되어 최종적으로 렌더링됨
-export const Metadata = {
+export const metadata = {
   title: "Home",
 };
 
@@ -16,12 +17,14 @@ async function getMovies() {
 export default async function HomePage() {
   let movies = await getMovies();
   return (
-    <div>
+    <div className={styles.container}>
       {movies.map((movie) => (
-        <div key={movie.id}>
-          <img src={movie.poster_path} />
-          <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
-        </div>
+        <Movie
+          key={movie.id}
+          id={movie.id}
+          title={movie.title}
+          poster_path={movie.poster_path}
+        />
       ))}
     </div>
   );
