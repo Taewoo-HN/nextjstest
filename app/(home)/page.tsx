@@ -1,12 +1,11 @@
 import Movie from "../../components/movie";
 import styles from "../../styles/home.module.css";
+import { BASE_URL } from "../../lib/config";
 
 // 메타데이터는 병합되어 최종적으로 렌더링됨
 export const metadata = {
   title: "Home",
 };
-
-export const BASE_URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
 async function getMovies() {
   // await new Promise((resolve) => setTimeout(resolve, 2000));
