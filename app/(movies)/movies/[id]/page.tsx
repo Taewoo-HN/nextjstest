@@ -26,11 +26,11 @@ export default async function MoviesPages({ params }: IParams) {
       <Suspense fallback={<h2>Loading Movie Infomation</h2>}>
         <MovieInfo id={id} />
       </Suspense>
-      <Suspense fallback={<h2>Loading Movie Videos</h2>}>
-        <MovieVideo id={id} />
-      </Suspense>
       <Suspense fallback={<h2>Loading Movie Actors</h2>}>
         <MovieActor id={id} />
+      </Suspense>
+      <Suspense fallback={<h2>Loading Movie Videos</h2>}>
+        <MovieVideo id={id} />
       </Suspense>
     </div>
   );

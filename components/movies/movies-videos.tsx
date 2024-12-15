@@ -10,15 +10,18 @@ async function getTrailers(id: String) {
 export default async function MovieVideo({ id }: { id: String }) {
   const videos = await getTrailers(id);
   return (
-    <div className={potato.container}>
-      {videos.map((video) => (
-        <iframe
-          key={video.id}
-          src={`https://youtube.com/embed/${video.key}`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          title={video.name}
-        />
-      ))}
+    <div>
+      <h2 className={potato.videos}> Clips </h2>
+      <div className={potato.container}>
+        {videos.map((video) => (
+          <iframe
+            key={video.id}
+            src={`https://youtube.com/embed/${video.key}`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            title={video.name}
+          />
+        ))}
+      </div>
     </div>
   );
 }
