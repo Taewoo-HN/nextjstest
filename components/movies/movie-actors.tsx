@@ -11,7 +11,7 @@ export default async function MovieActor({ id }: { id: String }) {
   return (
     <div>
       {actors.map((actor) => (
-        <div className={}>
+        <div className={styles.container}>
           <img src={actor.profile_path} />
           <h3>
             {actor.original_name} / {actor.character}
