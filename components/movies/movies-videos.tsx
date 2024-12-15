@@ -1,4 +1,4 @@
-import { BASE_URL } from "../lib/config";
+import { BASE_URL } from "../../lib/config";
 import potato from "../styles/movie_video.module.css";
 
 async function getTrailers(id: String) {

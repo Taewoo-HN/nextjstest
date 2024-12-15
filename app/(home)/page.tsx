@@ -1,4 +1,4 @@
-import Movie from "../../components/movie";
+import Movie from "../../components/movies/movie";
 import styles from "../../styles/home.module.css";
 import { BASE_URL } from "../../lib/config";
 

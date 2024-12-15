@@ -1,6 +1,7 @@
 import { Suspense } from "react";
-import MovieInfo, { getMovie } from "../../../../components/moive-info";
-import MovieVideo from "../../../../components/movies-videos";
+import MovieInfo, { getMovie } from "../../../../components/movies/movie-info";
+import MovieVideo from "../../../../components/movies/movies-videos";
+import MovieActor from "../../../../components/movies/movie-actors";
 
 interface IParams {
   params: Promise<{
@@ -27,6 +28,9 @@ export default async function MoviesPages({ params }: IParams) {
       </Suspense>
       <Suspense fallback={<h2>Loading Movie Videos</h2>}>
         <MovieVideo id={id} />
+      </Suspense>
+      <Suspense fallback={<h2>Loading Movie Actors</h2>}>
+        <MovieActor id={id} />
       </Suspense>
     </div>
   );
