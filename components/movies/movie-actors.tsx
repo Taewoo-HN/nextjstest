@@ -1,5 +1,5 @@
 import { BASE_URL } from "../../lib/config";
-import styles from "../styles/movie_video.module.css";
+import styles from "../../styles/movie_video.module.css";
 
 async function getActors(id: String) {
   const response = fetch(BASE_URL + `/${id}/credits`);
@@ -11,11 +11,11 @@ export default async function MovieActor({ id }: { id: String }) {
   return (
     <div>
       {actors.map((actor) => (
-        <div className={styles.container}>
+        <div key={actors.id} className={styles.container}>
           <img src={actor.profile_path} />
-          <h3>
+          <p>
             {actor.original_name} / {actor.character}
-          </h3>
+          </p>
         </div>
       ))}
     </div>
