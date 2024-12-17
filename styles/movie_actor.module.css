@@ -1,21 +1,41 @@
 .container {
-  display: grid;
-  margin: auto;
-  gap: 20px;
-  grid-template-rows: 1fr auto;
-  place-content: center;
-  margin-top: 50px;
-  cursor: pointer;
+  display: flex; /* 플렉스 레이아웃 */
+  gap: 20px; /* 요소 간 간격 */
+  overflow-x: auto; /* 수평 스크롤 활성화 */
+  padding: 10px; /* 양쪽 여백 */
+  scroll-snap-type: x mandatory; /* 스크롤 스냅 설정 */
+  scrollbar-width: thin; /* 스크롤바 얇게 설정 */
 }
+
+.container::-webkit-scrollbar {
+  height: 8px; /* 스크롤바 높이 */
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #ccc; /* 스크롤바 색상 */
+  border-radius: 10px; /* 스크롤바 둥글게 */
+}
+
+.profile {
+  flex: 0 0 auto; /* 크기를 고정하여 한 줄로 나열 */
+  width: 150px; /* 카드 크기 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.profile img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px; /* 이미지 둥글게 */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.profile img:hover {
+  opacity: 1; /* 호버 시 효과 */
+}
+
 .actors {
   margin-top: 5%;
   margin-left: 5%;
+  margin-bottom: 5%;
   text-decoration: underline;
-}
-.profile {
-  max-width: 100%;
-  place-items: center;
-  border-radius: 10px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease-in-out;
 }
